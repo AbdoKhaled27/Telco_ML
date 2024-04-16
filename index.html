@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throughput Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #e6f7ff"> 
+    <div class="container mt-5">
+        <h2 class="mb-4">Throughput Prediction</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="PRB_usage">PRB Usage:</label>
+                <input type="text" class="form-control" id="PRB_usage" name="PRB_usage">
+            </div>
+            <div class="form-group">
+                <label for="MCS">MCS:</label>
+                <input type="text" class="form-control" id="MCS" name="MCS">
+            </div>
+            <div class="form-group">
+                <label for="RRC_conn_UE">RRC Connection UE:</label>
+                <input type="text" class="form-control" id="RRC_conn_UE" name="RRC_conn_UE">
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Throughput</button>
+        </form>
+    </div>
+</body>
+</html>
