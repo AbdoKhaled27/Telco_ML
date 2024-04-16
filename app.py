@@ -17,20 +17,16 @@ def home():
         return render_template('index.html')
     elif request.method == 'POST':
         # Retrieve form data
-        prb_usage = int(request.form['PRB_usage'])
-        mcs = int(request.form['MCS'])
-        rrc_conn_ue = int(request.form['RRC_conn_UE'])
+        PRB_usage = int(request.form['PRB_usage'])
+        MCS = int(request.form['MCS'])
+        RRC_conn_UE = int(request.form['RRC_conn_UE'])
         
         # Preprocess the input features
-        features = np.array([[prb_usage, rrc_conn_ue, mcs]])
-        features_scaled = standard_scaler.fit_transform(features)
-        
-        # Make prediction
-        prediction = model.predict(features_scaled)
-        throughput = round(prediction[0], 2)
+        prediction=model.predict([[PRB_usage,RRC_conn_UE,MCS]])
+        output=round(prediction[0],2)
         
         # Render the result template with the prediction
-        return render_template('result.html', throughput=throughput)
+        return render_template('result.html', throughput=output)
     
 if __name__ == "__main__":
     app.run(debug=True)
